@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://lpaxfjx32yk4"]
+
+[ext_resource type="Texture2D" uid="uid://ck3ph12e5mve3" path="res://sprites/pipe.png" id="1_ciwdt"]
+[ext_resource type="Script" path="res://scripts/PipeSet.cs" id="1_mjwh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m72u1"]
+size = Vector2(60, 252)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mmev"]
+size = Vector2(10, 113)
+
+[node name="PipeSet" type="Node2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_mjwh3")
+MoveSpeed = 200.0
+metadata/_edit_group_ = true
+
+[node name="UpperPipe" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="PipeCollision" type="CollisionShape2D" parent="UpperPipe"]
+position = Vector2(2.08165e-12, -185)
+shape = SubResource("RectangleShape2D_m72u1")
+
+[node name="PipeSprite" type="Sprite2D" parent="UpperPipe"]
+texture_filter = 1
+position = Vector2(2.08165e-12, -185)
+texture = ExtResource("1_ciwdt")
+offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(40, 2.08165e-12)
+shape = SubResource("RectangleShape2D_1mmev")
+
+[node name="LowerPipe" type="StaticBody2D" parent="."]
+rotation = 3.14159
+metadata/_edit_group_ = true
+
+[node name="PipeCollision" type="CollisionShape2D" parent="LowerPipe"]
+position = Vector2(2.08165e-12, -185)
+shape = SubResource("RectangleShape2D_m72u1")
+
+[node name="PipeSprite" type="Sprite2D" parent="LowerPipe"]
+texture_filter = 1
+position = Vector2(2.08165e-12, -185)
+texture = ExtResource("1_ciwdt")
+offset = Vector2(2.08165e-12, 2.08165e-12)
