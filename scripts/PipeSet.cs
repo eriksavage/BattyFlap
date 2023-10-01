@@ -5,7 +5,6 @@ public partial class PipeSet : Node2D
 {
 	[Export]
 	public float MoveSpeed;
-	private Vector2 SpawnerPosition;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
