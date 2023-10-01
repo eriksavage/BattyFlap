@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Flappy Bird"
-run/main_scene="res://scenes/FlappyBird.tscn"
+config/name="Batty Flap"
+run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

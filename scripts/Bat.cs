@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Bird : RigidBody2D
+public partial class Bat : RigidBody2D
 {
 	// Called when the node enters the scene tree for the first time.
 	[Export]
@@ -15,8 +15,10 @@ public partial class Bird : RigidBody2D
 	public override void _Process(double delta)
 	{
 		SetSprite();
+		RotationDegrees = 0;
 
-		if(Input.IsActionJustPressed("flap"))
+
+		if (Input.IsActionJustPressed("flap"))
 		{
 			LinearVelocity = new Vector2(0, -1 * FlapPower);
 		}
@@ -25,9 +27,9 @@ public partial class Bird : RigidBody2D
 	private void SetSprite()
 	{
 		var sprite = GetChild<Sprite2D>(1);
-		string birdFall = "res://sprites/bird_fall.png";
-		string birdFlap = "res://sprites/bird_flap.png";
-		
-		sprite.Texture = LinearVelocity.Y < 0 ? (Texture2D)GD.Load(birdFlap) : (Texture2D)GD.Load(birdFall);
+		string batFall = "res://sprites/bird_fall.png";
+		string batFlap = "res://sprites/bird_flap.png";
+
+		sprite.Texture = LinearVelocity.Y < 0 ? (Texture2D)GD.Load(batFlap) : (Texture2D)GD.Load(batFall);
 	}
 }

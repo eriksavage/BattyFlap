@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8k44gp4ujepe"]
+
+[ext_resource type="Script" path="res://scripts/Bat.cs" id="1_uecb7"]
+[ext_resource type="Texture2D" uid="uid://cqry1yhyqm0bu" path="res://sprites/bird_fall.png" id="2_jgjv5"]
+[ext_resource type="Script" path="res://scripts/SpawnPipeSet.cs" id="3_h3vl3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mga7a"]
+radius = 26.0
+
+[sub_resource type="Theme" id="Theme_kvi5k"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.25, 1.25)
+
+[node name="BatBody" type="RigidBody2D" parent="."]
+script = ExtResource("1_uecb7")
+FlapPower = 400.0
+metadata/_edit_group_ = true
+
+[node name="BatCollision" type="CollisionShape2D" parent="BatBody"]
+shape = SubResource("CircleShape2D_mga7a")
+
+[node name="BatSprite" type="Sprite2D" parent="BatBody"]
+texture_filter = 1
+texture = ExtResource("2_jgjv5")
+
+[node name="PipeSpawner" type="Node2D" parent="."]
+position = Vector2(550, 2.08165e-12)
+script = ExtResource("3_h3vl3")
+SpawnRange = 125
+MinDeltaY = 100
+
+[node name="Timer" type="Timer" parent="PipeSpawner"]
+wait_time = 2.0
+autostart = true
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_kvi5k")
+
+[node name="Label" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = -441.0
+offset_top = -243.0
+offset_right = -380.0
+offset_bottom = -217.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score: 0"
+
+[node name="Label2" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = -210.0
+offset_top = -124.0
+offset_right = -134.0
+offset_bottom = -98.0
+text = "test again
+"
+
+[connection signal="timeout" from="PipeSpawner/Timer" to="PipeSpawner" method="_on_timer_timeout"]
