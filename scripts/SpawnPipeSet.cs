@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
+namespace Projects.scripts;
 public partial class SpawnPipeSet : Node2D
 {
 	[Export]
@@ -40,11 +41,10 @@ public partial class SpawnPipeSet : Node2D
 	{
 		bool isGreaterThanMin = false;
 		int heightPosition = new Random().Next(-SpawnRange, SpawnRange);
-		float deltaY;
 
 		while (!isGreaterThanMin)
 		{
-			deltaY = Math.Abs(heightPosition - Position.Y);
+			var deltaY = Math.Abs(heightPosition - Position.Y);
 
 			if (deltaY > MinDeltaY)
 			{

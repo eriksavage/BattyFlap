@@ -1,6 +1,6 @@
 using Godot;
-using System;
 
+namespace Projects.scripts;
 public partial class Bat : RigidBody2D
 {
 	// Called when the node enters the scene tree for the first time.
