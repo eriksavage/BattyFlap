@@ -1,50 +1,50 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8k44gp4ujepe"]
+[gd_scene format=3 uid="uid://c8k44gp4ujepe"]
 
-[ext_resource type="Script" path="res://scripts/Bat.cs" id="1_uecb7"]
+[ext_resource type="Script" uid="uid://cv6yr6g23q4j8" path="res://scripts/Bat.cs" id="1_uecb7"]
 [ext_resource type="Texture2D" uid="uid://cqry1yhyqm0bu" path="res://sprites/bird_fall.png" id="2_jgjv5"]
-[ext_resource type="Script" path="res://scripts/SpawnPipeSet.cs" id="3_h3vl3"]
-[ext_resource type="Script" path="res://scripts/ScoreLabel.cs" id="4_8fhfo"]
+[ext_resource type="Script" uid="uid://bvqbjm6v2jatr" path="res://scripts/SpawnPipeSet.cs" id="3_h3vl3"]
+[ext_resource type="Script" uid="uid://dy8gtwh8x6g2k" path="res://scripts/ScoreLabel.cs" id="4_8fhfo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mga7a"]
 radius = 28.0713
 
 [sub_resource type="Theme" id="Theme_kvi5k"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1368077872]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1567102818]
 zoom = Vector2(1.25, 1.25)
 
-[node name="Bat" type="RigidBody2D" parent="."]
+[node name="Bat" type="RigidBody2D" parent="." unique_id=1264034293]
 script = ExtResource("1_uecb7")
 FlapPower = 400.0
 metadata/_edit_group_ = true
 
-[node name="BatCollision" type="CollisionShape2D" parent="Bat"]
+[node name="BatCollision" type="CollisionShape2D" parent="Bat" unique_id=90018375]
 shape = SubResource("CircleShape2D_mga7a")
 
-[node name="BatSprite" type="Sprite2D" parent="Bat"]
+[node name="BatSprite" type="Sprite2D" parent="Bat" unique_id=425583941]
 texture_filter = 1
 texture = ExtResource("2_jgjv5")
 
-[node name="PipeSpawner" type="Node2D" parent="."]
+[node name="PipeSpawner" type="Node2D" parent="." unique_id=1900013387]
 position = Vector2(550, 2.08165e-12)
 script = ExtResource("3_h3vl3")
 SpawnRange = 125
 MinDeltaY = 100
 
-[node name="Timer" type="Timer" parent="PipeSpawner"]
+[node name="Timer" type="Timer" parent="PipeSpawner" unique_id=1376974496]
 wait_time = 2.0
 autostart = true
 
-[node name="UserInterface" type="Control" parent="."]
+[node name="UserInterface" type="Control" parent="." unique_id=1751792058]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme = SubResource("Theme_kvi5k")
 
-[node name="Score" type="Label" parent="UserInterface"]
+[node name="Score" type="Label" parent="UserInterface" unique_id=1826041188]
 layout_mode = 0
 offset_left = -441.0
 offset_top = -243.0
