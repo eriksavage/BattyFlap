@@ -10,7 +10,7 @@ public partial class Bat : RigidBody2D
 	private AnimatedSprite2D _animatedSprite;
 	public override void _Ready()
 	{
-		_animatedSprite = GetChild<AnimatedSprite2D>(1);
+		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	}
 
 	public override void _Process(double delta)

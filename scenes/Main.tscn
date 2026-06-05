@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8k44gp4ujepe"]
 
 [ext_resource type="PackedScene" uid="uid://8pj3bbs0vxm1" path="res://scenes/Bat.tscn" id="1_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://crjn711d2e1xh" path="res://scenes/Camera.tscn" id="1_vcsgt"]
 [ext_resource type="Script" uid="uid://bvqbjm6v2jatr" path="res://scripts/SpawnPipeSet.cs" id="3_h3vl3"]
 [ext_resource type="FontFile" uid="uid://c0epk0s1rfvic" path="res://fonts/PressStart2P-Regular.ttf" id="3_rarhs"]
 [ext_resource type="Script" uid="uid://dy8gtwh8x6g2k" path="res://scripts/ScoreLabel.cs" id="4_8fhfo"]
@@ -13,13 +14,13 @@ distance = -123.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vcsgt"]
 distance = -17.0
 
-[node name="Node2D" type="Node2D" unique_id=1368077872]
+[node name="Main" type="Node2D" unique_id=1368077872]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1567102818]
+[node name="Camera2D" parent="." unique_id=1210166158 instance=ExtResource("1_vcsgt")]
 
 [node name="Bat" parent="." unique_id=2083424197 instance=ExtResource("1_0bbpv")]
-position = Vector2(-80, 0)
-FlapPower = 350.0
+position = Vector2(-80, -75)
+FlapPower = 325.0
 
 [node name="PipeSpawner" type="Node2D" parent="." unique_id=1900013387]
 position = Vector2(550, 2.08165e-12)
