@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://cxgxt3e2d8kiw"]
+
+[ext_resource type="Script" uid="uid://dk8616x1qrf2w" path="res://scripts/Title.cs" id="1_agd63"]
+[ext_resource type="PackedScene" uid="uid://c8k44gp4ujepe" path="res://scenes/Main.tscn" id="2_aa56r"]
+[ext_resource type="PackedScene" uid="uid://crjn711d2e1xh" path="res://scenes/Camera.tscn" id="3_agd63"]
+[ext_resource type="Texture2D" uid="uid://jlyo1ug87ptk" path="res://sprites/bat/bat.png" id="5_aa56r"]
+[ext_resource type="Script" uid="uid://clklxbisx7h8t" path="res://scripts/BatProp.cs" id="5_mh4yb"]
+[ext_resource type="FontFile" uid="uid://c0epk0s1rfvic" path="res://fonts/PressStart2P-Regular.ttf" id="6_agd63"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agd63"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh4yb"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq2ky"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uth7j"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af2l1"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(192, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiaur"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(240, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tydxx"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(288, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2xtt"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(336, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwemb"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ptrc"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rdx8"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ostn1"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5l45"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(192, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0bw3"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(240, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7copb"]
+atlas = ExtResource("5_aa56r")
+region = Rect2(288, 96, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nj7f0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agd63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh4yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq2ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uth7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af2l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiaur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tydxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2xtt")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwemb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ptrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rdx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ostn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5l45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0bw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7copb")
+}],
+"loop": false,
+"name": &"stretch",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h6qpa"]
+radius = 8.0
+height = 22.0
+
+[node name="Title" type="Node2D" unique_id=734685334]
+script = ExtResource("1_agd63")
+TargetScene = ExtResource("2_aa56r")
+
+[node name="Camera" parent="." unique_id=1210166158 instance=ExtResource("3_agd63")]
+
+[node name="BatProp" type="RigidBody2D" parent="." unique_id=2058585495]
+position = Vector2(-75, -75)
+script = ExtResource("5_mh4yb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BatProp" unique_id=507199774]
+sprite_frames = SubResource("SpriteFrames_nj7f0")
+animation = &"stretch"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BatProp" unique_id=950935615]
+shape = SubResource("CapsuleShape2D_h6qpa")
+
+[node name="Label" type="Label" parent="." unique_id=1193546497]
+offset_left = -115.0
+offset_top = -23.0
+offset_right = 109.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_agd63")
+text = "BATTY FLAP
+PRESS SPACE/UP
+TO START"
+horizontal_alignment = 1
+uppercase = true
