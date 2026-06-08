@@ -230,8 +230,11 @@ animations = [{
 }]
 
 [node name="Bat" type="RigidBody2D" unique_id=2083424197]
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_cnldk")
-FlapPower = 400.0
+FlapPower = 375.0
+KoSpinSpeed = 300.0
 metadata/_edit_group_ = true
 
 [node name="BatCollision" type="CollisionShape2D" parent="." unique_id=1833049348]
