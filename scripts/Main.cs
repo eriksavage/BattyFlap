@@ -1,9 +1,8 @@
 using Godot;
 
 namespace Projects.scripts;
-public partial class ScoreLabel : Label
+public partial class Main : Node2D
 {
-	// Called when the node enters the scene tree for the first time.
 	private int _score;
 	private bool _canIncrement = true;
 	private EventBus _eventBus;
@@ -11,17 +10,18 @@ public partial class ScoreLabel : Label
 	{
 		_eventBus = GetNode<EventBus>("/root/EventBus");
 		_eventBus.PipesPassed += IncrementScore;
-		_eventBus.BatKnockedOut += SetCanIncrementFalse;
+		_eventBus.BatKnockedOut += OnBatKnockedOut;
 	}
-	
+
 	private void IncrementScore()
 	{
 		_score = _canIncrement ? _score + 1 : _score;
-		Text = $"Score: {_score}";
+		GetNode<Label>("UserInterface/Score").Text = $"Score: {_score}";
 	}
 
-	private void SetCanIncrementFalse()
+	private void OnBatKnockedOut()
 	{
 		_canIncrement = false;
+		
 	}
 }
