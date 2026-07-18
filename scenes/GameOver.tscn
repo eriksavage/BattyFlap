@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cpy64tfljnem3"]
+
+[ext_resource type="Theme" uid="uid://bue4nsy3ufdwn" path="res://font.tres" id="1_6bcno"]
+[ext_resource type="Script" uid="uid://cfqjkueeli45" path="res://scripts/GameOver.cs" id="2_qae0b"]
+[ext_resource type="PackedScene" uid="uid://cxgxt3e2d8kiw" path="res://scenes/Title.tscn" id="3_vuicl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvctj"]
+
+[node name="GameOver" type="Control" unique_id=1779066762]
+z_index = 1
+layout_mode = 3
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_6bcno")
+script = ExtResource("2_qae0b")
+TargetScene = ExtResource("3_vuicl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1253913197]
+z_index = 1
+custom_minimum_size = Vector2(320, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45230097, 0, 0, 0.39215687)
+
+[node name="Panel" type="Panel" parent="." unique_id=2060975544]
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tvctj")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=922996849]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -20.0
+offset_right = 44.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=446849194]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=748138948]
+layout_mode = 2
+columns = 2
+
+[node name="ScoreLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=2041930576]
+layout_mode = 2
+text = "Score: "
+
+[node name="Score" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1609562424]
+layout_mode = 2
+
+[node name="BestLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=972512166]
+layout_mode = 2
+text = "Best:"
+
+[node name="Best" type="Label" parent="Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=761495543]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1985502804]
+layout_mode = 2
+text = "Play Again"
+
+[connection signal="button_up" from="Panel/MarginContainer/VBoxContainer/Button" to="." method="OnPlayAgainButtonUp"]
