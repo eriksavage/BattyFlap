@@ -53,7 +53,7 @@ public partial class Bat : RigidBody2D
 	}
 	private void OnBodyEnteredFoo(Node body)
 	{
-		if (body is StaticBody2D)
+		if (body is StaticBody2D && !_knockedOut)
 		{
 			_knockedOut = true;
 			var eventBus = GetNode<EventBus>("/root/EventBus");

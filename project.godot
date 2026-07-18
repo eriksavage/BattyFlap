@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*res://scripts/EventBus.cs"
+GameState="*uid://bnv74tmk34tfx"
 
 [display]
 
