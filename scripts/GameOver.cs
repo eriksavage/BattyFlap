@@ -8,7 +8,7 @@ public partial class GameOver : Control
 	
 	public override void _Ready()
 	{
-
+		Input.MouseMode = Input.MouseModeEnum.Visible;
 		GetNode<Label>("Panel/MarginContainer/VBoxContainer/GridContainer/Score").Text = Score.ToString();
 		GetNode<Label>("Panel/MarginContainer/VBoxContainer/GridContainer/Best").Text = BestScore.ToString();
 	}

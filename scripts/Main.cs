@@ -10,6 +10,7 @@ public partial class Main : Node2D
 	private Label _scoreLabel;
 	public override void _Ready()
 	{
+		Input.MouseMode = Input.MouseModeEnum.Hidden;
 		_gameState = GetNode<GameState>("/root/GameState");
 		_eventBus = GetNode<EventBus>("/root/EventBus");
 		_scoreLabel = GetNode<Label>("UserInterface/Score");
