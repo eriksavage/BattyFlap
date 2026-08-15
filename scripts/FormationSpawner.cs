@@ -2,22 +2,20 @@ using Godot;
 using System;
 
 namespace Projects.scripts;
-public partial class SpawnPipeSet : Node2D
+public partial class FormationSpawner : Node2D
 {
 	[Export]
 	public int SpawnRange;
 	
 	[Export]
 	public int MinDeltaY;
-	// Called when the node enters the scene tree for the first time.
+	
 	public override void _Ready()
 	{
+		var viewportHeight = GetViewport().GetVisibleRect().Size.Y;
+		GD.Print("viewportHeight: " + viewportHeight);
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
 	private void _on_timer_timeout()
 	{
 				SetSpawnPosition();
@@ -33,7 +31,7 @@ public partial class SpawnPipeSet : Node2D
 
 	private void SpawnPipeSetInstance()
 	{
-		var scene = GD.Load<PackedScene>("res://scenes/PipeSet.tscn");
+		var scene = GD.Load<PackedScene>("res://scenes/FormationSet.tscn");
 		GetParent().AddChild(scene.Instantiate());
 	}
 

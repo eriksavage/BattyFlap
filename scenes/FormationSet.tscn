@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bhg4ng3h0wgj"]
+
+[ext_resource type="Script" uid="uid://dosbdx70nlhbj" path="res://scripts/FormationSet.cs" id="1_hu0yl"]
+[ext_resource type="Texture2D" uid="uid://b6gy2u10woefc" path="res://sprites/spike.png" id="2_hi28w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mmev"]
+size = Vector2(10, 113)
+
+[node name="FormationSet" type="Node2D" unique_id=241898599]
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_hu0yl")
+MoveSpeed = 200.0
+FormationGap = 60.0
+metadata/_edit_group_ = true
+
+[node name="Stalactite" type="StaticBody2D" parent="." unique_id=1480253826]
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Stalactite" unique_id=775145810]
+position = Vector2(-12, 0)
+polygon = PackedVector2Array(4, -2.08165e-12, 47, -100, 84, -142, -59, -142, -19, -84, -4, -2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="Stalactite" unique_id=53963469]
+position = Vector2(0, -72)
+texture = ExtResource("2_hi28w")
+flip_v = true
+
+[node name="PointZone" type="Area2D" parent="." unique_id=2100421962]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PointZone" unique_id=1371949680]
+position = Vector2(40, 2.08165e-12)
+shape = SubResource("RectangleShape2D_1mmev")
+
+[node name="Stalagmite" type="StaticBody2D" parent="." unique_id=737908452]
+rotation = 3.14159
+metadata/_edit_group_ = true
+
+[node name="PipeCollision" type="CollisionPolygon2D" parent="Stalagmite" unique_id=1726073541]
+position = Vector2(2.08165e-12, -185)
+polygon = PackedVector2Array(14.000015, 179.00003, 6.0000153, 179.00002, -36.999733, 79.99991, -70.99963, 40.999817, 72.00037, 41.000183, 39.00026, 83.0001)
+
+[node name="Sprite2D" type="Sprite2D" parent="Stalagmite" unique_id=342508471]
+texture_filter = 1
+position = Vector2(0, -72)
+texture = ExtResource("2_hi28w")
+offset = Vector2(2.08165e-12, 2.08165e-12)
+flip_h = true
+flip_v = true
+
+[connection signal="body_entered" from="PointZone" to="." method="_on_point_zone_body_entered"]

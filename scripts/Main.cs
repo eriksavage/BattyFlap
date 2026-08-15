@@ -13,14 +13,14 @@ public partial class Main : Node2D
 		_gameState = GetNode<GameState>("/root/GameState");
 		_eventBus = GetNode<EventBus>("/root/EventBus");
 		_scoreLabel = GetNode<Label>("UserInterface/Score");
-		_eventBus.PipesPassed += IncrementScore;
+		_eventBus.FormationPassed += IncrementScore;
 		_eventBus.BatKnockedOut += OnBatKnockedOut;
 		_eventBus.RestartRequested += OnRestartRequested;
 	}
 
 	public override void _ExitTree()
 	{
-		_eventBus.PipesPassed -= IncrementScore;
+		_eventBus.FormationPassed -= IncrementScore;
 		_eventBus.BatKnockedOut -= OnBatKnockedOut;
 		_eventBus.RestartRequested -= OnRestartRequested;
 	}

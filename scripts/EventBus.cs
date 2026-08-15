@@ -4,7 +4,7 @@ namespace Projects.scripts;
 public partial class EventBus : Node
 {
     [Signal]
-    public delegate void PipesPassedEventHandler();
+    public delegate void FormationPassedEventHandler();
     
     [Signal]
     public delegate void BatKnockedOutEventHandler();
@@ -13,9 +13,9 @@ public partial class EventBus : Node
     public delegate void RestartRequestedEventHandler();
 
     // Helper method so other classes can emit this easily
-    public void EmitPipesPassed()
+    public void EmitFormationPassed()
     {
-        EmitSignal(SignalName.PipesPassed);
+        EmitSignal(SignalName.FormationPassed);
     }
 
     public void EmitBatKnockedOut()

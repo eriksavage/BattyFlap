@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://8pj3bbs0vxm1" path="res://scenes/Bat.tscn" id="1_0bbpv"]
 [ext_resource type="Script" uid="uid://bdclsxlwwnwov" path="res://scripts/Main.cs" id="1_c01mt"]
 [ext_resource type="PackedScene" uid="uid://crjn711d2e1xh" path="res://scenes/Camera.tscn" id="1_vcsgt"]
-[ext_resource type="Script" uid="uid://bvqbjm6v2jatr" path="res://scripts/SpawnPipeSet.cs" id="3_h3vl3"]
+[ext_resource type="Script" uid="uid://wof4253g521t" path="res://scripts/FormationSpawner.cs" id="4_vcsgt"]
 [ext_resource type="Theme" uid="uid://bue4nsy3ufdwn" path="res://font.tres" id="5_vcsgt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rarhs"]
@@ -21,13 +21,13 @@ script = ExtResource("1_c01mt")
 position = Vector2(-80, -75)
 FlapPower = 325.0
 
-[node name="PipeSpawner" type="Node2D" parent="." unique_id=1900013387]
+[node name="FormationSpawner" type="Node2D" parent="." unique_id=1900013387]
 position = Vector2(550, 2.08165e-12)
-script = ExtResource("3_h3vl3")
-SpawnRange = 125
-MinDeltaY = 50
+script = ExtResource("4_vcsgt")
+SpawnRange = 50
+MinDeltaY = 30
 
-[node name="Timer" type="Timer" parent="PipeSpawner" unique_id=1376974496]
+[node name="Timer" type="Timer" parent="FormationSpawner" unique_id=1376974496]
 wait_time = 2.0
 autostart = true
 
@@ -62,4 +62,4 @@ rotation = 3.1415927
 shape = SubResource("WorldBoundaryShape2D_vcsgt")
 one_way_collision = true
 
-[connection signal="timeout" from="PipeSpawner/Timer" to="PipeSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="FormationSpawner/Timer" to="FormationSpawner" method="_on_timer_timeout"]
