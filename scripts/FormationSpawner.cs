@@ -13,7 +13,6 @@ public partial class FormationSpawner : Node2D
 	public override void _Ready()
 	{
 		var viewportHeight = GetViewport().GetVisibleRect().Size.Y;
-		GD.Print("viewportHeight: " + viewportHeight);
 	}
 
 	private void _on_timer_timeout()

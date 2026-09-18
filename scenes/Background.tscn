@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://do3p0ejyt3bsy"]
+
+[ext_resource type="Texture2D" uid="uid://7ylmmot3628k" path="res://sprites/environment/scene_bg_L1.png" id="1_sx43m"]
+[ext_resource type="Texture2D" uid="uid://cq6hjwnpffab" path="res://sprites/environment/scene_bg_L3.png" id="2_nou1y"]
+[ext_resource type="Texture2D" uid="uid://bec7tgjd007ic" path="res://sprites/environment/scene_bg_L2.png" id="2_txrn8"]
+
+[node name="Background" type="Node2D" unique_id=533183730]
+
+[node name="Far" type="Parallax2D" parent="." unique_id=1343934868]
+repeat_size = Vector2(320, 0)
+autoscroll = Vector2(-2, 0)
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Far" unique_id=444903436]
+texture = ExtResource("1_sx43m")
+
+[node name="Mid" type="Parallax2D" parent="." unique_id=439330555]
+repeat_size = Vector2(320, 0)
+autoscroll = Vector2(-10, 0)
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Mid" unique_id=1373599828]
+texture = ExtResource("2_txrn8")
+
+[node name="Close" type="Parallax2D" parent="." unique_id=2045658187]
+repeat_size = Vector2(320, 0)
+autoscroll = Vector2(-40, 0)
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Close" unique_id=675076570]
+texture = ExtResource("2_nou1y")

@@ -3,8 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://8pj3bbs0vxm1" path="res://scenes/Bat.tscn" id="1_0bbpv"]
 [ext_resource type="Script" uid="uid://bdclsxlwwnwov" path="res://scripts/Main.cs" id="1_c01mt"]
 [ext_resource type="PackedScene" uid="uid://crjn711d2e1xh" path="res://scenes/Camera.tscn" id="1_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://do3p0ejyt3bsy" path="res://scenes/Background.tscn" id="3_c01mt"]
 [ext_resource type="Script" uid="uid://wof4253g521t" path="res://scripts/FormationSpawner.cs" id="4_vcsgt"]
+[ext_resource type="Script" uid="uid://dvfrqg3w1g4pf" path="res://scripts/BatRest.cs" id="5_jlsqs"]
 [ext_resource type="Theme" uid="uid://bue4nsy3ufdwn" path="res://font.tres" id="5_vcsgt"]
+[ext_resource type="Texture2D" uid="uid://d2b6566iwe8m4" path="res://sprites/environment/bat_rest.png" id="6_q8u5g"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rarhs"]
 distance = -123.0
@@ -17,9 +20,18 @@ script = ExtResource("1_c01mt")
 
 [node name="Camera2D" parent="." unique_id=1210166158 instance=ExtResource("1_vcsgt")]
 
+[node name="Background" parent="." unique_id=533183730 instance=ExtResource("3_c01mt")]
+
 [node name="Bat" parent="." unique_id=2083424197 instance=ExtResource("1_0bbpv")]
-position = Vector2(-80, -75)
+position = Vector2(-80, -50)
 FlapPower = 325.0
+
+[node name="BatRest" type="Node2D" parent="." unique_id=387303395]
+position = Vector2(-84, -74)
+script = ExtResource("5_jlsqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="BatRest" unique_id=937555224]
+texture = ExtResource("6_q8u5g")
 
 [node name="FormationSpawner" type="Node2D" parent="." unique_id=1900013387]
 position = Vector2(550, 2.08165e-12)
@@ -47,7 +59,7 @@ offset_left = -155.0
 offset_top = -85.0
 offset_right = -91.0
 offset_bottom = -75.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.69869006, 0.4898572, 0.10851013, 1)
 text = "Score: 0"
 
 [node name="WorldBoundries" type="StaticBody2D" parent="." unique_id=76921966]
