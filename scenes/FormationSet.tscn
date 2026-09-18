@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhg4ng3h0wgj"]
 
 [ext_resource type="Script" uid="uid://dosbdx70nlhbj" path="res://scripts/FormationSet.cs" id="1_hu0yl"]
-[ext_resource type="Texture2D" uid="uid://b6gy2u10woefc" path="res://sprites/spike.png" id="2_hi28w"]
+[ext_resource type="Texture2D" uid="uid://b6gy2u10woefc" path="res://sprites/formation.png" id="2_hi28w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mmev"]
 size = Vector2(10, 113)

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dk8616x1qrf2w" path="res://scripts/Title.cs" id="1_agd63"]
 [ext_resource type="PackedScene" uid="uid://c8k44gp4ujepe" path="res://scenes/Main.tscn" id="2_aa56r"]
 [ext_resource type="PackedScene" uid="uid://crjn711d2e1xh" path="res://scenes/Camera.tscn" id="3_agd63"]
+[ext_resource type="Texture2D" uid="uid://cofmakge84fuu" path="res://sprites/title_bg.png" id="4_mh4yb"]
 [ext_resource type="Texture2D" uid="uid://jlyo1ug87ptk" path="res://sprites/bat/bat.png" id="5_aa56r"]
 [ext_resource type="Script" uid="uid://clklxbisx7h8t" path="res://scripts/BatProp.cs" id="5_mh4yb"]
 [ext_resource type="FontFile" uid="uid://c0epk0s1rfvic" path="res://fonts/PressStart2P-Regular.ttf" id="6_agd63"]
@@ -135,8 +136,11 @@ TargetScene = ExtResource("2_aa56r")
 
 [node name="Camera" parent="." unique_id=1210166158 instance=ExtResource("3_agd63")]
 
+[node name="Background" type="Sprite2D" parent="." unique_id=1841019009]
+texture = ExtResource("4_mh4yb")
+
 [node name="BatProp" type="RigidBody2D" parent="." unique_id=2058585495]
-position = Vector2(-75, -75)
+position = Vector2(-80, -45)
 script = ExtResource("5_mh4yb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BatProp" unique_id=507199774]
@@ -151,7 +155,7 @@ offset_left = -115.0
 offset_top = -23.0
 offset_right = 109.0
 offset_bottom = 52.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.9196654, 0.651122, 0.15874738, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_agd63")
 text = "BATTY FLAP

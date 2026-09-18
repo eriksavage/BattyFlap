@@ -3,8 +3,7 @@ using Godot;
 namespace Projects.scripts;
 public partial class FormationSet : Node2D
 {
-	[Export]
-	public float MoveSpeed;
+	private float _moveSpeed;
 
 	[Export]
 	public float FormationGap;
@@ -12,6 +11,8 @@ public partial class FormationSet : Node2D
 	private bool _passed;
 	public override void _Ready()
 	{
+		_moveSpeed = Constants.MOVEMENT_SPEED;
+
 		var stalactite = GetNode<StaticBody2D>("Stalactite");
 		stalactite.Position = new Vector2(stalactite.Position.X, -FormationGap / 2);
 		
@@ -35,7 +36,7 @@ public partial class FormationSet : Node2D
 
 	private void MoveLeft(float delta)
 	{
-		Position = new Vector2(Position.X + (-1 * MoveSpeed * delta), Position.Y);
+		Position = new Vector2(Position.X + (-1 * _moveSpeed * delta), Position.Y);
 	}
 	private void EvaluateFormationPassed()
 	{
